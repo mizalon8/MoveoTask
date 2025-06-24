@@ -5,7 +5,7 @@ const { Server } = require("socket.io");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/auth.js");
 
 const app = express();
 const server = http.createServer(app);
