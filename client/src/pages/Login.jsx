@@ -16,10 +16,10 @@ const Login = () => {
     try {
       const res = await axios.post('http://localhost:5000/login', formData);
 
-      const { token, role, username } = res.data;
+      const { token, role, username, instrument } = res.data;
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("username", username); 
+      sessionStorage.setItem("token", token);
+      sessionStorage.setItem("userData", JSON.stringify({ username, role, instrument }));
 
       alert('connected successfully!');
 

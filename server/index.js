@@ -3,9 +3,12 @@ const cors = require("cors");
 const http = require("http");
 const { Server } = require("socket.io");
 const mongoose = require("mongoose");
+const userRoutes = require("./routes/user");
+
 require("dotenv").config();
 
 const authRoutes = require("./routes/auth.js");
+const searchRoutes = require("./routes/search.js");
 
 const app = express();
 const server = http.createServer(app);
@@ -22,6 +25,8 @@ app.use(express.json());
 
 // Routes
 app.use(authRoutes);
+app.use(searchRoutes);
+app.use(userRoutes);
 
 // Socket.IO
 io.on("connection", (socket) => {
@@ -30,10 +35,20 @@ io.on("connection", (socket) => {
   // שלח לכל המשתמשים שיצטרף משתמש חדש
   io.emit("user-connected", { id: socket.id });
 
+  socket.on("song-picked", (song) => {
+    console.log("Server broadcasting song-picked:", song); //בדיקההה
+    io.emit("song-picked", song); // שלח את השיר לכל השחקנים
+  });
+
   socket.on("disconnect", () => {
     console.log("🔴 Client disconnected:", socket.id);
     // שלח לכל המשתמשים שיצא משתמש
     io.emit("user-disconnected", { id: socket.id });
+  });
+
+  socket.on("quit-session", () => {
+    console.log("⚠️ Admin quit session");
+    io.emit("quit-session");
   });
 });
 

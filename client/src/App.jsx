@@ -4,6 +4,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Player from "./pages/Player";
+import Results from "./pages/Results"; 
+import Live from "./pages/Live";
 import { io } from "socket.io-client";
 
 export default function App() {
@@ -24,6 +26,11 @@ export default function App() {
     socket.on("user-connected", (data) => {
       console.log("New user connected:", data.id);
     });
+
+    socket.on("song-picked", (song) => {
+    localStorage.setItem("currentSong", JSON.stringify(song));
+    window.location.href = "/live";
+  });
 
     socket.on("user-disconnected", (data) => {
       console.log("User disconnected:", data.id);
@@ -50,6 +57,8 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/player" element={<Player />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/live" element={<Live />} />
       </Routes>
     </BrowserRouter>
   );
