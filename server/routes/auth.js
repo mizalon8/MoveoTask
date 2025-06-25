@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken"); // jsonwebtoken (JWT) מאפשר לנו ליצור טוקן לאחר התחברות, כדי לזהות את המשתמש בעתיד.
-const User = require("../models/User"); // נניח שיש לך מודל משתמש ב models/User.js
+const User = require("../models/User");
 
-// הרשמה
+// LOGIN
 router.post("/signup", async (req, res) => {
   const { username, password, instrument } = req.body;
 
@@ -13,17 +13,15 @@ router.post("/signup", async (req, res) => {
   }
 
   try {
-    // בדוק אם המשתמש כבר קיים
     const existingUser = await User.findOne({ username });
     if (existingUser) {
       return res.status(400).json({ message: "שם משתמש כבר קיים" });
     }
 
-    // הצפן את הסיסמה
+    // we will encrypt the password with salt
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // צור משתמש חדש
     const newUser = new User({
       username,
       password: hashedPassword,
@@ -60,7 +58,7 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "סיסמה שגויה" });
     }
 
-    // צור JWT
+    // we we'll create JWT
     const payload = {
       userId: user._id,
       role: user.role,
@@ -70,7 +68,7 @@ router.post("/login", async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.json({ token, role: user.role });
+    res.json({ token, role: user.role, username: user.username });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "שגיאה בשרת" });

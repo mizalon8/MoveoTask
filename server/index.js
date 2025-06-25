@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
@@ -27,8 +27,13 @@ app.use(authRoutes);
 io.on("connection", (socket) => {
   console.log("🟢 New client connected:", socket.id);
 
+  // שלח לכל המשתמשים שיצטרף משתמש חדש
+  io.emit("user-connected", { id: socket.id });
+
   socket.on("disconnect", () => {
     console.log("🔴 Client disconnected:", socket.id);
+    // שלח לכל המשתמשים שיצא משתמש
+    io.emit("user-disconnected", { id: socket.id });
   });
 });
 

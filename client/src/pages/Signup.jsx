@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -13,41 +13,43 @@ const Signup = () => {
 
   const handleChange = (e) => {
     const target = e.target;
-  
-    // we'll check if target has value or name
     if (!target || !target.name) return;
-  
-    // we'll check if target is one of the options below in order to continue 
     if (!['INPUT', 'SELECT', 'TEXTAREA'].includes(target.tagName)) return;
-  
+
     setFormData({
-      ...formData, // the three dots (Spread operator) will access all the keys and the values in the object ​​and will update them.
+      ...formData,
       [target.name]: target.value,
     });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // prevents page refreshing
-
+    e.preventDefault();
     try {
       const res = await axios.post('http://localhost:5000/signup', formData);
-      alert('נרשמת בהצלחה!');
+      alert('You have successfully registered!');
       console.log(res.data);
-      navigate('/login'); 
+      navigate('/login');
     } catch (err) {
-      alert('אירעה שגיאה בהרשמה');
+      alert('An error occurred during registration.');
       console.error(err);
     }
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: 'auto' }}>
-      <h2>הרשמה</h2>
+    <div style={{ position: 'relative', maxWidth: '400px', margin: 'auto', paddingTop: '60px' }}>
+      <div style={{ position: 'absolute', top: 0, right: 0, padding: '10px' }}>
+        <span>Already have a user?</span>
+        <Link to="/login">
+          <button style={{ marginRight: '5px' }}>Login</button>
+        </Link>
+      </div>
+
+      <h2>Signup</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="username"
-          placeholder="שם משתמש"
+          placeholder="username"
           value={formData.username}
           onChange={handleChange}
           required
@@ -56,7 +58,7 @@ const Signup = () => {
         <input
           type="password"
           name="password"
-          placeholder="סיסמה"
+          placeholder="password"
           value={formData.password}
           onChange={handleChange}
           required
@@ -68,16 +70,16 @@ const Signup = () => {
           onChange={handleChange}
           required
         >
-          <option value="">בחר כלי נגינה</option>
-          <option value="guitar">גיטרה</option>
-          <option value="bass">בס</option>
-          <option value="drums">תופים</option>
-          <option value="vocals">שירה</option>
-          <option value="keyboard">קלידים</option>
-          <option value="saxophone">סקסופון</option>
+          <option value=""> Choose instrument </option>
+          <option value="guitar">guitar</option>
+          <option value="bass">bass</option>
+          <option value="drums">drums</option>
+          <option value="keyboard">piano</option>
+          <option value="saxophone">saxophone</option>
+          <option value="vocals">I'm a singer</option>
         </select>
         <br /><br />
-        <button type="submit">הרשמה</button>
+        <button type="submit">Signup</button>
       </form>
     </div>
   );

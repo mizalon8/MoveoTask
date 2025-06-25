@@ -15,11 +15,13 @@ const Login = () => {
 
     try {
       const res = await axios.post('http://localhost:5000/login', formData);
-      const { token, role } = res.data;
 
-      localStorage.setItem('token', token);
+      const { token, role, username } = res.data;
 
-      alert('התחברת בהצלחה!');
+      localStorage.setItem("token", token);
+      localStorage.setItem("username", username); 
+
+      alert('connected successfully!');
 
       if (role === 'admin') {
         navigate('/admin');
@@ -27,18 +29,18 @@ const Login = () => {
         navigate('/player');
       }
     } catch (err) {
-      alert('שגיאה בהתחברות, נסה שוב.');
+      alert('Connection error, try again.');
       console.error(err);
     }
   };
 
   return (
     <div style={{ maxWidth: '400px', margin: 'auto' }}>
-      <h2>התחברות</h2>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
           name="username"
-          placeholder="שם משתמש"
+          placeholder="username"
           value={formData.username}
           onChange={handleChange}
           required
@@ -47,13 +49,13 @@ const Login = () => {
         <input
           type="password"
           name="password"
-          placeholder="סיסמה"
+          placeholder="password"
           value={formData.password}
           onChange={handleChange}
           required
         />
         <br />
-        <button type="submit">התחבר</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
