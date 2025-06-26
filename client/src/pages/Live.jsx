@@ -63,6 +63,31 @@ const Live = () => {
     fetchUserInfo();
   }, []);
 
+  useEffect(() => {
+  const storedSong = localStorage.getItem("currentSong");
+  if (!location.state?.song && !storedSong) {
+    // אין שיר - נחזיר את המשתמש אחורה לפי התפקיד
+    if (userRole === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/player");
+    }
+  }
+}, [userRole, navigate, location.state]);
+
+useEffect(() => {
+  const storedSong = localStorage.getItem("currentSong");
+  if (!location.state?.song && !storedSong) {
+    // אין שיר - נחזיר את המשתמש אחורה לפי התפקיד
+    if (userRole === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/player");
+    }
+  }
+}, [userRole, navigate, location.state]);
+
+
   // Scroll אוטומטי כאשר autoScroll דולק
   useEffect(() => {
     let scrollInterval;
@@ -88,6 +113,7 @@ const Live = () => {
   // האזנה לאירוע quit-session שמחזיר את המשתמש לעמוד המתאים
   useEffect(() => {
     socket.on("quit-session", () => {
+      localStorage.removeItem("currentSong");
       if (userRole === "admin") {
         navigate("/admin");
       } else {

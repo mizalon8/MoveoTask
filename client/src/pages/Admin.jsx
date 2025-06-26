@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const stored = localStorage.getItem("currentSong");
+    if (stored) {
+      navigate("/live", { state: { song: JSON.parse(stored) } });
+    }
+  }, [navigate]);
 
   const handleSearchChange = (e) => {
     setQuery(e.target.value);

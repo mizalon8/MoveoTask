@@ -7,6 +7,7 @@ import Player from "./pages/Player";
 import Results from "./pages/Results"; 
 import Live from "./pages/Live";
 import { io } from "socket.io-client";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
   const socketRef = useRef(null);
@@ -50,16 +51,46 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/signup" />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/player" element={<Player />} />
-        <Route path="/results" element={<Results />} />
-        <Route path="/live" element={<Live />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Navigate to="/signup" />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+
+      {/* עמודים שמוגנים לפי תפקיד */}
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <Admin />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/player"
+        element={
+          <ProtectedRoute allowedRoles={["player"]}>
+            <Player />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/results"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <Results />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/live"
+        element={
+          <ProtectedRoute allowedRoles={["admin", "player"]}>
+            <Live />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+  </BrowserRouter>
+);
 }
