@@ -1,0 +1,114 @@
+/* רקע כללי - ללא אנימציה */
+.admin-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f2f2f2;
+  color: #414D67;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* לוגו */
+.admin-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* עטיפת תוכן - היא זו שתהיה עם fade-in */
+.admin-content {
+  animation: fadeIn 0.8s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* אפקט חשיפה */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* כותרת */
+.admin-title {
+  font-size: 36px;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  color: #414D67;
+  text-align: center;
+}
+
+/* טופס */
+.admin-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* קלט */
+.admin-input {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #983732;
+  width: 250px;
+  background-color: #ffffff;
+  color: #414D67;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.admin-input:focus {
+  border-color: #414D67;
+}
+
+/* כפתור */
+.admin-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #983732;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-button:hover {
+  background-color: #7e2c2a;
+}
+
+/* רספונסיביות */
+@media (max-width: 600px) {
+  .admin-logo {
+    width: 60px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .admin-title {
+    font-size: 28px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+
+  .admin-input,
+  .admin-button {
+    width: 90%;
+    max-width: 300px;
+  }
+}

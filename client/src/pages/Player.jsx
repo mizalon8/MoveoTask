@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import socket from "../socket";
+import "../styles/Player.css";
+import logo from "../assets/moveo.png";
 
 const Player = () => {
   const navigate = useNavigate();
@@ -24,17 +26,18 @@ const Player = () => {
   }, [navigate]);
 
   return (
-  <div
-    style={{
-      textAlign: "center",
-      marginTop: "50px",
-      color: "#111",
-      height: "100vh",
-    }}
-  >
-    <h1>Waiting for next song...</h1>
-  </div>
-);
+    <div className="player-container">
+      <img src={logo} alt="Moveo Logo" className="player-logo" />
+      <div className="player-content">
+        <h2 className="player-text">Waiting for next song...</h2>
+        <div className="bouncing-dots">
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Player;

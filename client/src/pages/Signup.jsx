@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import "../styles/Signup.css";
+import logo from "../assets/moveo.png"; 
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -36,50 +38,53 @@ const Signup = () => {
   };
 
   return (
-    <div style={{ position: 'relative', maxWidth: '400px', margin: 'auto', paddingTop: '60px' }}>
-      <div style={{ position: 'absolute', top: 0, right: 0, padding: '10px' }}>
+    <div className="signup-container">
+      <img src={logo} alt="Moveo Logo" className="signup-logo" />
+
+      <div className="signup-login-link">
         <span>Already have a user?</span>
         <Link to="/login">
-          <button style={{ marginRight: '5px' }}>Login</button>
+          <button>Login</button>
         </Link>
       </div>
 
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 className="signup-title">Signup</h2>
+
+      <form onSubmit={handleSubmit} className="signup-form">
         <input
           type="text"
           name="username"
-          placeholder="username"
+          className="signup-input"
+          placeholder="Username"
           value={formData.username}
           onChange={handleChange}
           required
         />
-        <br />
         <input
           type="password"
           name="password"
-          placeholder="password"
+          className="signup-input"
+          placeholder="Password"
           value={formData.password}
           onChange={handleChange}
           required
         />
-        <br />
         <select
           name="instrument"
+          className="signup-select"
           value={formData.instrument}
           onChange={handleChange}
           required
         >
-          <option value=""> Choose instrument </option>
-          <option value="guitar">guitar</option>
-          <option value="bass">bass</option>
-          <option value="drums">drums</option>
-          <option value="keyboard">piano</option>
-          <option value="saxophone">saxophone</option>
+          <option value="">Choose instrument</option>
+          <option value="guitar">Guitar</option>
+          <option value="bass">Bass</option>
+          <option value="drums">Drums</option>
+          <option value="keyboard">Piano</option>
+          <option value="saxophone">Saxophone</option>
           <option value="vocals">I'm a singer</option>
         </select>
-        <br /><br />
-        <button type="submit">Signup</button>
+        <button type="submit" className="signup-button">Signup</button>
       </form>
     </div>
   );

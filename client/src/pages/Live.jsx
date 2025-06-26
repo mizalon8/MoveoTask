@@ -206,8 +206,7 @@ useEffect(() => {
         lineHeight: "1.8",
       }}
     >
-      <h2 style={{ textAlign: "center" }}>{song.title}</h2>
-      <h4 style={{ textAlign: "center", color: "#aaa" }}>by {song.artist}</h4>
+      <h2 style={{ textAlign: "center", direction: "rtl"}}>{song.title}</h2> 
 
       <div
         style={{ marginTop: "30px" }}

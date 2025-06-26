@@ -1,229 +1,27 @@
 [
   {
-    "title": "Hips Don't Lie",
-    "artist": "Shakira",
-    "sections": [
-      {
-        "type": "verse",
-        "lines": [
-          {
-            "chords": "Bm         G",
-            "lyrics": "Ladies up in here tonight"
-          },
-          {
-            "chords": "D           A",
-            "lyrics": "No fighting, no fighting"
-          },
-          {
-            "chords": "Bm       G",
-            "lyrics": "We got the refugees up in here"
-          },
-          {
-            "chords": "D         A",
-            "lyrics": "No fighting, Shakira, Shakira"
-          }
-        ]
-      },
-      {
-        "type": "chorus",
-        "lines": [
-          {
-            "chords": "Bm       G         D         A",
-            "lyrics": "I'm on tonight, you know my hips don't lie"
-          },
-          {
-            "chords": "Bm        G      D      A",
-            "lyrics": "And I'm starting to feel it's right"
-          },
-          {
-            "chords": "Bm        G       D       A",
-            "lyrics": "All the attraction, the tension"
-          },
-          {
-            "chords": "Bm        G      D       A",
-            "lyrics": "Don't you see baby, this is perfection"
-          }
-        ]
-      }
-    ]
+    "title": "עוף גוזל",
+    "artist": "אריק איינשטיין",
+    "url": "https://www.tab4u.com/tabs/songs/2665_%D7%90%D7%A8%D7%99%D7%A7_%D7%90%D7%99%D7%99%D7%A0%D7%A9%D7%98%D7%99%D7%99%D7%9F_-_%D7%A2%D7%95%D7%A3_%D7%92%D7%95%D7%96%D7%9C.html"
   },
   {
-    "title": "Let It Be",
-    "artist": "The Beatles",
-    "sections": [
-      {
-        "type": "verse",
-        "lines": [
-          {
-            "chords": "C     G     Am     F",
-            "lyrics": "When I find myself in times of trouble"
-          },
-          {
-            "chords": "C       G         F  C",
-            "lyrics": "Mother Mary comes to me"
-          },
-          {
-            "chords": "Am  G  F  C",
-            "lyrics": "Speaking words of wisdom, let it be"
-          },
-          {
-            "chords": "C     G      Am      F",
-            "lyrics": "And in my hour of darkness"
-          },
-          {
-            "chords": "C        G         F     C",
-            "lyrics": "She is standing right in front of me"
-          }
-        ]
-      },
-      {
-        "type": "chorus",
-        "lines": [
-          {
-            "chords": "Am  G  F  C",
-            "lyrics": "Let it be, let it be"
-          },
-          {
-            "chords": "Am    G       F        C",
-            "lyrics": "Whisper words of wisdom, let it be"
-          }
-        ]
-      }
-    ]
+    "title": "היא כל כך יפה",
+    "artist": "כוורת",
+    "url": "https://www.tab4u.com/tabs/songs/1729_%D7%9B%D7%95%D7%95%D7%A8%D7%AA_-_%D7%94%D7%99%D7%90_%D7%9B%D7%9C_%D7%9B%D7%9A_%D7%99%D7%A4%D7%94.html"
+  },
+  {
+    "title": "Riptide",
+    "artist": "Vance Joy",
+    "url": "https://www.tab4u.com/tabs/songs/5723_Vance_Joy_-_Riptide.html"
   },
   {
     "title": "Fix You",
     "artist": "Coldplay",
-    "sections": [
-      {
-        "type": "verse",
-        "lines": [
-          {
-            "chords": "C           Em      Am",
-            "lyrics": "When you try your best but you don't succeed"
-          },
-          {
-            "chords": "C         Em         Am",
-            "lyrics": "When you get what you want but not what you need"
-          },
-          {
-            "chords": "C          Em         Am",
-            "lyrics": "When you feel so tired but you can't sleep"
-          },
-          {
-            "chords": "C        Em      Am",
-            "lyrics": "Stuck in reverse"
-          }
-        ]
-      },
-      {
-        "type": "chorus",
-        "lines": [
-          {
-            "chords": "F       G        C     Am",
-            "lyrics": "Lights will guide you home"
-          },
-          {
-            "chords": "F       G        C     Am",
-            "lyrics": "And ignite your bones"
-          },
-          {
-            "chords": "F       G         C",
-            "lyrics": "And I will try to fix you"
-          }
-        ]
-      }
-    ]
+    "url": "https://www.tab4u.com/tabs/songs/5049_Coldplay_-_Fix_you.html"
   },
   {
-    "title": "God's Plan",
-    "artist": "Drake",
-    "sections": [
-      {
-        "type": "verse",
-        "lines": [
-          {
-            "chords": "Em              C",
-            "lyrics": "She say, 'Do you love me?' I tell her, 'Only partly'"
-          },
-          {
-            "chords": "G                   D",
-            "lyrics": "I only love my bed and my momma, I'm sorry"
-          },
-          {
-            "chords": "Em                C",
-            "lyrics": "Fifty dub, I even got it tatted on me"
-          },
-          {
-            "chords": "G              D",
-            "lyrics": "81, they'll bring the crashers to the party"
-          },
-          {
-            "chords": "Em              C",
-            "lyrics": "She say, 'Do you love me?' I tell her, 'Only partly'"
-          },
-          {
-            "chords": "G                   D",
-            "lyrics": "I only love my bed and my momma, I'm sorry"
-          },
-          {
-            "chords": "Em                C",
-            "lyrics": "Fifty dub, I even got it tatted on me"
-          },
-          {
-            "chords": "G              D",
-            "lyrics": "81, they'll bring the crashers to the party"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Someone Like You",
+    "title": "Rolling in the Deep",
     "artist": "Adele",
-    "sections": [
-      {
-        "type": "verse",
-        "lines": [
-          {
-            "chords": "A        E       F#m     D",
-            "lyrics": "I heard that you're settled down"
-          },
-          {
-            "chords": "A        E         F#m       D",
-            "lyrics": "That you found a girl and you're married now"
-          },
-          {
-            "chords": "A       E        F#m      D",
-            "lyrics": "I heard that your dreams came true"
-          },
-          {
-            "chords": "A          E       F#m        D",
-            "lyrics": "Guess she gave you things I didn't give to you"
-          }
-        ]
-      },
-      {
-        "type": "chorus",
-        "lines": [
-          {
-            "chords": "A       E         F#m       D",
-            "lyrics": "Never mind, I'll find someone like you"
-          },
-          {
-            "chords": "A       E      F#m       D",
-            "lyrics": "I wish nothing but the best for you too"
-          },
-          {
-            "chords": "A        E      F#m      D",
-            "lyrics": "'Don't forget me,' I beg"
-          },
-          {
-            "chords": "A         E        F#m       D",
-            "lyrics": "I remember you said"
-          }
-        ]
-      }
-    ]
+    "url": "https://www.tab4u.com/tabs/songs/4743_Adele_-_Rolling_In_The_Deep.html"
   }
 ]

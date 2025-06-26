@@ -4,6 +4,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/user");
+const { fetchTab4U } = require("./utils/crawler");
 
 require("dotenv").config();
 
@@ -27,6 +28,20 @@ app.use(express.json());
 app.use(authRoutes);
 app.use(searchRoutes);
 app.use(userRoutes);
+
+app.get("/api/crawl", async (req, res) => {
+  const { url } = req.query;
+  if (!url) return res.status(400).json({ error: "Missing URL parameter" });
+
+  try {
+    const song = await fetchTab4U(url);
+
+    res.json(song);
+  } catch (err) {
+    console.error("Crawler error:", err.message);
+    res.status(500).json({ error: "Failed to crawl song" });
+  }
+});
 
 // Socket.IO
 io.on("connection", (socket) => {

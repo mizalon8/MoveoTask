@@ -1,0 +1,135 @@
+/* מיכל כללי */
+.results-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f2f2f2; /* רקע אפור בהיר */
+  color: #414D67;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* לוגו בפינה שמאלית עליונה */
+.results-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* קישור לאדמין */
+.results-admin-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  color: #414D67;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.results-admin-link span {
+  margin-right: 8px;
+}
+
+.results-admin-link button {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #983732;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.results-admin-link button:hover {
+  background-color: #7e2c2a;
+}
+
+
+.signup-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* כותרת */
+.results-title {
+  font-size: 36px;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  color: #414D67;
+  text-align: center;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+/* רשימת תוצאות */
+.results-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* פריט בודד */
+.result-item {
+  padding: 16px 20px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #fff;
+  color: #414D67;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  animation: fadeIn 0.6s ease;
+}
+
+.result-item:hover {
+  background-color: #e8e8e8;
+  transform: scale(1.02);
+}
+
+/* הודעת אין תוצאות */
+.results-empty {
+  font-size: 18px;
+  color: #983732;
+  margin-top: 20px;
+}
+
+/* אנימציות */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* רספונסיביות */
+@media (max-width: 600px) {
+  .results-title {
+    font-size: 28px;
+    margin-top: 80px;
+  }
+
+  .result-item {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .results-logo {
+    width: 60px;
+    top: 15px;
+    left: 15px;
+  }
+
+}
+

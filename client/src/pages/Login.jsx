@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import "../styles/Login.css";
+import logo from "../assets/moveo.png";
 
 const Login = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
@@ -34,28 +36,37 @@ const Login = () => {
     }
   };
 
-  return (
-    <div style={{ maxWidth: '400px', margin: 'auto' }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    return (
+    <div className="login-container">
+      <img src={logo} alt="Moveo Logo" className="login-logo" />
+      <div className="login-signup-link">
+              <span>Don't have a user?</span>
+              <Link to="/signup">
+                <button>Signup</button>
+              </Link>
+      </div>
+      <h2 className="login-title">Login</h2>
+      <form className="login-form" onSubmit={handleSubmit}>
         <input
           name="username"
-          placeholder="username"
+          placeholder="Username"
+          className="login-input"
           value={formData.username}
           onChange={handleChange}
           required
         />
-        <br />
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
+          className="login-input"
           value={formData.password}
           onChange={handleChange}
           required
         />
-        <br />
-        <button type="submit">Login</button>
+        <button type="submit" className="login-button">
+          Login
+        </button>
       </form>
     </div>
   );
