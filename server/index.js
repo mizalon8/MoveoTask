@@ -47,11 +47,10 @@ app.get("/api/crawl", async (req, res) => {
 io.on("connection", (socket) => {
   console.log("🟢 New client connected:", socket.id);
 
-  // שלח לכל המשתמשים שיצטרף משתמש חדש
   io.emit("user-connected", { id: socket.id });
 
   socket.on("song-picked", (song) => {
-    console.log("Server broadcasting song-picked:", song); //בדיקההה
+    console.log("Server broadcasting song-picked:", song); //בדיקה
     io.emit("song-picked", song); // שלח את השיר לכל השחקנים
   });
 

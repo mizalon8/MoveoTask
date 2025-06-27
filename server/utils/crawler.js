@@ -1,5 +1,7 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer"); // //נייבא את Puppeteer – ספרייה שמדמה דפדפן (headless Chrome).
 
+//פונקציה המקבלת כתובת של שיר ב־ Tab4U (למשל: https://www.tab4u.com/tabs/songs/1234.html).
+//מחזירה את פרטי השיר (כמו שם, אמן, מילים ואקורדים).
 async function fetchTab4U(url) {
   const browser = await puppeteer.launch({
     headless: true,
@@ -38,7 +40,7 @@ async function fetchTab4U(url) {
           const chords = current.innerText.trim().replace(/\u00a0/g, " ");
           const lyrics = next.innerText.trim().replace(/\u00a0/g, " ");
           currentSection.lines.push({ chords, lyrics });
-          i++; // skip next row, we already processed it
+          i++;
         }
       }
 

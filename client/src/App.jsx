@@ -15,7 +15,7 @@ export default function App() {
   useEffect(() => {
     // יוצרים את הסוקט בתוך useEffect
     socketRef.current = io("http://localhost:5000", {
-      transports: ["websocket"], // נשתמש ב-WebSocket בלבד
+      transports: ["websocket"], 
     });
 
     const socket = socketRef.current;

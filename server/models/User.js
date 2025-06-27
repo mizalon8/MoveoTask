@@ -1,3 +1,5 @@
+// קובץ המודל של המשתמש (User.js) — כדי לבדוק איך השדות מוגדרים (username, instrument, role וכו').
+
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({

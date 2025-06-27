@@ -20,7 +20,7 @@
 
 /* תוכן מרכזי */
 .player-content {
-  margin-top: 140px; /* מעלה את התוכן קצת יותר */
+  margin-top: 140px; 
   display: flex;
   flex-direction: column;
   align-items: center;

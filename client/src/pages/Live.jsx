@@ -142,7 +142,6 @@ useEffect(() => {
       overflow: "hidden", // מונע גלילה כפולה
     }}
   >
-    {/* כפתורים למעלה */}
     <div
       style={{
         display: "flex",
@@ -195,12 +194,11 @@ useEffect(() => {
       )}
     </div>
 
-    {/* תוכן השיר עם גלילה פנימית אחת בלבד */}
     <div
       ref={scrollRef}
       style={{
         padding: "30px",
-        maxHeight: "calc(100vh - 80px)", // משאיר מקום לכפתורים
+        maxHeight: "calc(100vh - 80px)", 
         overflowY: "auto",
         fontSize: "20px",
         lineHeight: "1.8",

@@ -18,7 +18,6 @@ const Results = () => {
       try {
         const res = await fetch(`http://localhost:5000/search?query=${query}`);
         const data = await res.json();
-        // מניח שה־search מחזיר גם url לשיר
         setResults(data);
       } catch (err) {
         console.error("Error fetching search results:", err);
