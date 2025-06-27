@@ -27,7 +27,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/signup', formData);
+      const res = await axios.post('https://moveotask-production-a21d.up.railway.app/signup', formData);
       alert('You have successfully registered!');
       console.log(res.data);
       navigate('/login');

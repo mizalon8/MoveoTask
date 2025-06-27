@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/login', formData);
+      const res = await axios.post('https://moveotask-production-a21d.up.railway.app/login', formData);
 
       const { token, role, username, instrument } = res.data;
 

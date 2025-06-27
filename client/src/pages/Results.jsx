@@ -16,7 +16,7 @@ const Results = () => {
     if (!query) return;
     (async () => {
       try {
-        const res = await fetch(`http://localhost:5000/search?query=${query}`);
+        const res = await fetch(`https://moveotask-production-a21d.up.railway.app/search?query=${query}`);
         const data = await res.json();
         setResults(data);
       } catch (err) {
@@ -31,7 +31,7 @@ const Results = () => {
       return;
     }
     try {
-      const res = await axios.get("http://localhost:5000/api/crawl", {
+      const res = await axios.get("https://moveotask-production-a21d.up.railway.app/api/crawl", {
         params: { url: song.url },
       });
       const crawledSong = res.data;

@@ -14,7 +14,7 @@ export default function App() {
 
   useEffect(() => {
     // יוצרים את הסוקט בתוך useEffect
-    socketRef.current = io("http://localhost:5000", {
+    socketRef.current = io("https://moveotask-production-a21d.up.railway.app", {
       transports: ["websocket"], 
     });
 

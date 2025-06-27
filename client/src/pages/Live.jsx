@@ -47,7 +47,7 @@ const Live = () => {
           console.warn("No token found, skipping user info fetch");
           return;
         }
-        const res = await fetch("http://localhost:5000/api/user-info", {
+        const res = await fetch("https://moveotask-production-a21d.up.railway.app/api/user-info", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
